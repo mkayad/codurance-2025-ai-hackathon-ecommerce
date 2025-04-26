@@ -31,6 +31,11 @@ public class FashionItemService {
                 String[] values = line.split(",");
                 
                 // Create FashionItem with all required fields
+                int year = 0;
+                if (values[7] != null && !values[7].trim().isEmpty()) {
+                    year = Integer.parseInt(values[7]);
+                }
+                
                 FashionItem item = new FashionItem(
                     values[0],  // id
                     values[1],  // gender
@@ -39,9 +44,13 @@ public class FashionItemService {
                     values[4],  // articleType
                     values[5],  // baseColour
                     values[6],  // season
-                    Integer.parseInt(values[7]),  // year
+                    year,  // year - default to 0 if empty
                     values[8],  // usage
-                    values[9]   // productDisplayName
+                    values[9],  // productDisplayName
+                    "",  // name
+                    "",  // description
+                    0.0,  // price
+                    ""    // imageUrl
                 );
                 
                 items.add(item);

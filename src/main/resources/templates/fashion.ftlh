@@ -27,10 +27,9 @@
     <div class="item-grid">
         <#list fashionItems as item>
             <div class="item-card">
-                <img class="item-image" src="${item.imageUrl}" alt="${item.name}">
                 <h2>${item.name}</h2>
-                <p>${item.description}</p>
-                <div class="item-price">$${item.price}</div>
+                <p>${item.masterCategory}</p>
+                
             </div>
         </#list>
     </div>
